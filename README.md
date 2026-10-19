@@ -89,5 +89,5 @@ Open:http://127.0.0.1:5000
 ![Campus Navigation Map](screenshots/Final_route.png)
 
 ### Navigation Route
-![Campus Navigation Route](screenshots/Route_steps.png)
+![Campus Navigation Route](screenshots/Route_Steps.png)
 
