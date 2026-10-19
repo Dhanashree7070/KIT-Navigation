@@ -83,11 +83,11 @@ Open:http://127.0.0.1:5000
 ## Project Preview
 
 ### Home Page
-![Campus Navigation Home Page](screenshots/home.png)
+![Campus Navigation Home Page](screenshots/HomePage.png)
 
 ### Campus Map
-![Campus Navigation Map](screenshots/campus-map.png)
+![Campus Navigation Map](screenshots/Final_route.png)
 
 ### Navigation Route
-![Campus Navigation Route](screenshots/navigation-route.png)
+![Campus Navigation Route](screenshots/Route_steps.png)
 
