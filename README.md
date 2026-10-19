@@ -79,3 +79,15 @@ Open:http://127.0.0.1:5000
 3. Accessibility routes
 4. Offline support
 5. Multilingual interface
+
+## Project Preview
+
+### Home Page
+![Campus Navigation Home Page](screenshots/home.png)
+
+### Campus Map
+![Campus Navigation Map](screenshots/campus-map.png)
+
+### Navigation Route
+![Campus Navigation Route](screenshots/navigation-route.png)
+
