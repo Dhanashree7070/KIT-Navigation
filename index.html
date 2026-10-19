@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="text/javascript" src="app.js" defer></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+
+
+</head>
+<body>
+    <nav id="sidebar">
+        <ul >
+            <li>
+                <span class="logo">KIT Navigation</span>
+                <button onclick="toggleSidebar()" id="toggle-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="m242-200 200-280-200-280h98l200 280-200 280h-98Zm238 0 200-280-200-280h98l200 280-200 280h-98Z"/></svg>
+                </button>
+            </li>
+            <li class="active">
+                <a href="index.html">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#1f1f1f"><path d="M240-200h120v-240h240v240h120v-360L480-740 240-560v360Zm-80 80v-480l320-240 320 240v480H520v-240h-80v240H160Zm320-350Z"/></svg>
+                    <span>Home</span>
+                </a>
+            </li>
+            <li>
+                <button onclick="toggleSubMenu(this)" class="dropdown-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="M240-400q0 52 21 98.5t60 81.5q-1-5-1-9v-9q0-32 12-60t35-51l113-111 113 111q23 23 35 51t12 60v9q0 4-1 9 39-35 60-81.5t21-98.5q0-50-18.5-94.5T648-574q-20 13-42 19.5t-45 6.5q-62 0-107.5-41T401-690q-39 33-69 68.5t-50.5 72Q261-513 250.5-475T240-400Zm240 52-57 56q-11 11-17 25t-6 29q0 32 23.5 55t56.5 23q33 0 56.5-23t23.5-55q0-16-6-29.5T537-292l-57-56Zm0-492v132q0 34 23.5 57t57.5 23q18 0 33.5-7.5T622-658l18-22q74 42 117 117t43 163q0 134-93 227T480-80q-134 0-227-93t-93-227q0-129 86.5-245T480-840Z"/></svg>
+                    <span>Departments</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#1f1f1f"><path d="M480-360 280-560h400L480-360Z"/></svg>
+                </button>
+                    <ul class="sub-menu">
+                        <div>
+                            <li id="L"><a  onclick="showLocation('Main Building')" href="#">Main Building</a></li>
+                            <li id="L"><a  onclick="showLocation('CSE AIML-DS Department')" href="#">CSE AIML-DS Department</a></li>
+                            <li id="L"><a  onclick="showLocation('Mechanical Department')" href="#">Mechanical Department</a></li>
+                            <li id="L"><a  onclick="showLocation('E&Tc Building')" href="#">E&Tc Building</a></li>
+                            <li id="L"><a  onclick="showLocation('Biotech Department')" href="#">Biotech Department</a></li>
+                            <li id="L"><a onclick="showLocation('Electrical Department')" href="#">Electrical Department</a></li>
+                            <li id="L"><a onclick="showLocation('CSBS Department')" href="#">CSBS Department</a></li>
+                            <li id="L"><a onclick="showLocation('IMER Building')" href="#">IMER Building</a></li>
+                        </div>    
+                    </ul>
+            </li>
+            <li>
+                <button onclick="toggleSubMenu(this)" class="dropdown-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="M240-120v-720h280q100 0 170 70t70 170q0 100-70 170t-170 70H400v240H240Zm160-400h128q33 0 56.5-23.5T608-600q0-33-23.5-56.5T528-680H400v160Z"/></svg>
+                    <span>Other</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#1f1f1f"><path d="M480-360 280-560h400L480-360Z"/></svg>
+                </button>
+                    <ul class="sub-menu">
+                        <div>
+                        <li><a onclick="showLocation('Main Entry Gate')" href="#">Main Entry Gate</a></li>
+                        <li><a onclick="showLocation('KIT College Garden')" href="#">Garden</a></li>
+                        <li><a onclick="showLocation('South Enclave')" href="#">South Enclave</a></li>
+                        <li><a onclick="showLocation('North Enclave')" href="#">North Enclave</a></li>
+                         <li><a onclick="showLocation('Play Ground')" href="#">Ground</a></li>
+                         <li><a onclick="showLocation('YD vihir')" href="#">YD vihir</a></li>
+                         <li><a onclick="showLocation('Workshop')" href="#">Workshop</a></li>
+                         <li><a onclick="showLocation('College Boys Hostel')" href="#">College Boys Hostel</a></li> 
+                        </div>
+                    </ul>
+                
+            </li>
+            <li>
+                <button onclick="toggleSubMenu(this)" class="dropdown-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="M280-80v-366q-51-14-85.5-56T160-600v-280h80v280h40v-280h80v280h40v-280h80v280q0 56-34.5 98T360-446v366h-80Zm400 0v-320H560v-280q0-83 58.5-141.5T760-880v800h-80Z"/></svg>
+                    <span>Canteens</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#1f1f1f"><path d="M480-360 280-560h400L480-360Z"/></svg>
+                </button>
+                    <ul class="sub-menu">
+                        <div>
+                        <li><a onclick="showLocation('KIT College Canteen')" href="#">Canteen C1</a></li>
+                        <li><a onclick="showLocation('Biotech Canteen')" href="#">Biotech Canteen</a></li>
+                        </div>
+                    </ul>
+                
+            </li>
+            <li>
+                <a onclick="showLocation('Library')" href="#">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="M480-60q-72-68-165-104t-195-36v-440q101 0 194 36.5T480-498q73-69 166-105.5T840-640v440q-103 0-195.5 36T480-60Zm0-104q63-47 134-75t146-37v-276q-73 13-143.5 52.5T480-394q-66-66-136.5-105.5T200-552v276q75 9 146 37t134 75Zm0-436q-66 0-113-47t-47-113q0-66 47-113t113-47q66 0 113 47t47 113q0 66-47 113t-113 47Zm0-80q33 0 56.5-23.5T560-760q0-33-23.5-56.5T480-840q-33 0-56.5 23.5T400-760q0 33 23.5 56.5T480-680Zm0-80Zm0 366Z"/></svg>
+                    <span>Library</span>
+                </a>
+            </li>
+            
+            <li>
+                <a onclick="showLocation('Parking')" href="#">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="m612-292 56-56-148-148v-184h-80v216l172 172ZM480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-400Zm0 320q133 0 226.5-93.5T800-480q0-133-93.5-226.5T480-800q-133 0-226.5 93.5T160-480q0 133 93.5 226.5T480-160Z"/></svg>
+                    <span>Parking</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <main >
+        <div  class="searchbar">
+            <input type="text" id="searchInput" placeholder="Search KIT Maps">
+            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="M784-120 532-372q-30 24-69 38t-83 14q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l252 252-56 56ZM380-400q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z"/></svg>
+        </div>
+        <div id="map" style="height: 460px; width: 100%; margin-top: 5px;"></div>
+        <div class="route-controls">
+            <select id="startPoint">
+                <option>Main Building</option>
+                <option>Library</option>
+                <option>South Enclave</option>
+                <option>North Enclave</option>
+                <option>Parking</option>
+                <option>Main Entry Gate</option>
+                <option>Garden</option>
+                <option>College Boys Hostel</option>
+                <option>KIT College Canteen</option>
+                <option>Biotech Canteen</option>
+                <option>CSE AIML-DS Department</option>
+                <option>Mechanical Department</option>
+                <option>E&Tc Building</option>
+                <option>Biotech Department</option>
+                <option>Electrical Department</option>
+                <option>CSBS Department</option>
+                <option>Workshop</option>
+                <option>IMER Building</option>
+                <option>YD vihir</option>
+               <option>Play Ground</option>
+            </select>
+            
+            <select id="endPoint">
+                <option>Library</option>
+                <option>Main Entry Gate</option>
+                <option>South Enclave</option>
+                <option>North Enclave</option>
+                <option>Parking</option>
+                <option>Main Building</option>
+                <option>Garden</option>
+                <option>College Boys Hostel</option>
+                <option>KIT College Canteen</option>
+                <option>Biotech Canteen</option>
+                <option>CSE AIML-DS Department</option>
+                <option>Mechanical Department</option>
+                <option>E&Tc Building</option>
+                <option>Biotech Department</option>
+                <option>Electrical Department</option>
+                <option>CSBS Department</option>
+                <option>Workshop</option>
+                <option>IMER Building</option>
+                <option>YD vihir</option>
+               <option>Play Ground</option>
+                
+            </select>
+            
+            <button onclick="showRoute(
+                document.getElementById('startPoint').value,
+                document.getElementById('endPoint').value
+            )">Show Route</button>
+            <button>
+                <a href="test.html">See Our Campus in 3D</a>
+                
+            </button>
+            
+            
+              
+        </div>
+        
+        
+
+    </main>
+    
+
+
+</body>
+</html>

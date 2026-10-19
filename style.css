@@ -1,0 +1,238 @@
+@import url('https://fonts.googleapis.com/css2?family=Winky+Sans:ital,wght@0,300..900;1,300..900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+}
+html{
+    font-family: "Winky Sans", sans-serif;
+    line-height: 1.5rem;
+}
+body{
+    min-height: 100vh;
+    min-height: 100dvh;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    font-size: larger;
+}
+#sidebar{
+    box-sizing: border-box;
+    height: 100vh;
+    width: 280px;
+    padding: 20px;
+    background-color: rgb(44, 40, 40);
+    border-right: 1px solid black;
+    position: sticky;
+    top: 0;
+    align-self: start;
+    transition: 300ms ease-in-out;
+    overflow-y: auto;
+    text-wrap: nowrap;
+    
+}
+#sidebar.close{
+    padding: 5px;
+    width: 60px;
+}
+#sidebar ul{
+    list-style: none;
+}
+#sidebar > ul > li:first-child{
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 16px;
+    .logo{
+        font-weight: 600;
+    }
+}
+#sidebar ul li.active a{
+    color: rgb(24, 186, 192);
+    svg{
+        fill:white;
+    }
+}
+
+#sidebar a,#sidebar .dropdown-btn, #sidebar .logo{
+    border-radius: .5em;
+    padding: .85em;
+    text-decoration: none;
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: 1em;
+}
+.dropdown-btn{
+    width: 100%;
+    text-align: left;
+    background: none;
+    border: none;
+    font: inherit;
+    cursor: pointer;
+}
+#sidebar svg{
+    flex-shrink: 0;
+    fill: white;
+}
+#sidebar a span,#sidebar .dropdown-btn span{
+    flex-grow: 1;
+}
+#sidebar a:hover, #sidebar .dropdown-btn:hover{
+    background-color: dodgerblue;
+}
+#sidebar .sub-menu{
+   display: grid;
+   grid-template-rows: 0fr;
+    transition: 300ms ease-in-out;
+    > div{
+        overflow: hidden;
+    }
+}
+#sidebar .sub-menu.show{
+    grid-template-rows: 1fr;
+}
+.dropdown-btn svg{
+    transition: 200ms ease;
+}
+.rotate svg:last-child{
+    rotate: 180deg;
+}
+
+#sidebar .sub-menu a{
+    padding-left: 2em;
+}
+#toggle-btn{
+    margin-left: auto;
+    padding: 1em;
+    border: none;
+    border-radius: .5em;
+    background: none;
+    cursor: pointer;
+
+    svg{
+        transition: rotate 150ms ease;
+    }
+}
+
+#toggle-btn:hover{
+    background-color: cadetblue;
+}
+
+
+main{
+    padding: 10px;
+    gap: 20px;
+    background-color: #f2f4f4; 
+}
+
+
+.searchbar {
+    display: flex;
+  
+    align-items: center;
+    background: #222;
+    border-radius: 35px;
+    padding: 6px 15px;
+    width: 350px;
+    border: 1px solid #444;
+}
+
+.searchbar input {
+    border: none;
+    outline: none;
+    background: none;
+    color: white;
+    font-size: 16px;
+    padding: 5px;
+    flex: 1;
+}
+
+.searchbar svg {
+    width: 24px;
+    height: 24px;
+    fill: #e3e3e3;
+}
+.location {
+    padding: 8px;
+    margin: 5px 0;
+    background: #e0e0e0;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  .route-controls {
+    display: flex;
+    gap: 10px;
+    margin: 5px auto;
+    max-width: 600px;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 10px;
+    margin-top: 20px;
+}
+
+.route-controls select {
+    padding: 10px 14px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    transition: border 0.2s ease;
+}
+
+.route-controls select:focus {
+    outline: none;
+    border-color: #4285f4;
+}
+
+.route-controls button {
+    padding: 10px 18px;
+    background-color: #4285f4;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.route-controls button:hover {
+    background-color: #357ae8;
+    transform: scale(1.02);
+}
+
+.route-controls button:active {
+    transform: scale(0.98);
+}
+.route-controls button a {
+    text-decoration: none;
+    color: white;
+}
+
+@media(max-width: 800px){
+    body{
+        grid-template-columns: 1fr;
+    }
+    main{
+        padding: 2em 1em 60px 1em;
+    }
+    #sidebar{
+        height: 60px;
+        width: 100%;
+        border-right: none;
+        border-top: 1px solid black;
+        padding: 0;
+        position: fixed;
+        top: unset;
+        bottom: 0;
+
+        > ul{
+            padding: 0;
+            display: grid;
+            grid-auto-columns: 60px;
+            grid-auto-flow: column;
+            align-items: center;
+            overflow-y: scroll;
+        }
+    }
+}

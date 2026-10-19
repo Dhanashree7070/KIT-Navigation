@@ -1,0 +1,26 @@
+{
+    "Main Building": [ "Office","North Enclave","South Enclave","Electrical Department","Civil Department","Parking","E&Tc Building"],
+    "Library": ["North Enclave","Civil Department","Garden"],
+    "KIT College Canteen":["E&Tc Building","CSE AIML-DS Department","Workshop","Main Building"],
+    "Main Entry Gate":["Play Ground","YD vihir"],
+    "E&Tc Building":["Main Building","CSE AIML-DS Department","KIT College Canteen","Play Ground"],
+    "North Enclave":["Garden","Parking","Main Building","South Enclave","Library"],
+    "South Enclave":["Mechanical Department","CSE AIML-DS Department","KIT College Canteen","Workshop"],
+    "CSE AIML-DS Department":["College Boys Hostel","CSBS Department","YD vihir"],
+    "Mechanical Department":["Workshop","South Enclave"],
+    "College Boys Hostel":["Play Ground","YD vihir"],
+    "Play Ground":["E&Tc Building","KIT College Canteen"],
+    "Electrical Department":["E&Tc Building"],
+    "Civil Department":["Library","Play Ground"],
+    "Office":["North Enclave","South Enclave"],
+    "Garden":["Library","North Enclave"],
+    "Parking":["Main Building","North Enclave","South Enclave"],
+    "CSBS Department":["CSE AIML-DS Department"],
+    "Workshop":["Main Building","Mechanical Department"],
+    "YD vihir":["IMER Building","Main Entry Gate","Play Ground","CSE AIML-DS Department","South Enclave","E&Tc Building"],
+    "IMER Building":["YD vihir","Main Entry Gate"],
+    "Biotech Department":["Garden","Library"],
+    "Biotech Canteen":["Parking"]
+ 
+  }
+  
